@@ -177,7 +177,7 @@ class _NoteTaskState extends State<NoteTask> {
   }
 
   Future updateNote() async {
-    final note = widget.note!.copy(description: description);
+    final note = widget.note!.copy(description: description, category: category);
     await NotesDatabase.instance.update(note);
     isOn = true;
     Navigator.of(context).pop();
